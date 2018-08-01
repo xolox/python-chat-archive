@@ -1,0 +1,9 @@
+# Python packages required to run `make check'.
+flake8 >= 2.6.0
+flake8-docstrings >= 0.2.8
+
+# The flake8 package depends on specific versions of pyflakes, so we don't
+# specify any version constraints here, otherwise they'd override the version
+# constraints of flake8, which means we'd have to duplicate them here to remain
+# accurate (and that duplication would no doubt get out of date quickly).
+pyflakes

@@ -1,0 +1,8 @@
+# .coveragerc: Configuration file for coverage.py.
+# http://nedbatchelder.com/code/coverage/
+
+[run]
+source = chat_archive
+omit = chat_archive/tests.py
+
+# vim: ft=dosini

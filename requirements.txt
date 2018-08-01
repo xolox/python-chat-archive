@@ -1,0 +1,19 @@
+# Installation requirements for the `chat-archive' program.
+alembic >= 0.8.6
+coloredlogs >= 10.0
+emoji >= 0.5.0
+humanfriendly >= 4.16.1
+property-manager >= 2.3.1
+qpass >= 2.2.1
+sqlalchemy >= 1.2.8
+update-dotdee >= 5.0
+verboselogs >= 1.7
+
+# Google Hangouts backend.
+hangups >= 0.4.4
+
+# Slack backend.
+slacker >= 0.9.65
+
+# Telegram backend.
+telethon >= 1.0.2
