@@ -11,6 +11,20 @@ to `semantic versioning`_.
 .. _Keep a Changelog: http://keepachangelog.com/
 .. _semantic versioning: http://semver.org/
 
+`Release 4.0.1`_ (2018-08-02)
+-----------------------------
+
+Just before publishing this project yesterday I propagated a rename throughout
+the code base, rephrasing "password" as "secret" (my rationale being that
+"naming things is important" 😇). Unfortunately that rename was propagated a
+bit more thoroughly than I had intended, impacting the interaction with the
+Hangups API. This should be fixed in release 4.0.1. For posterity, this relates
+to the following exception::
+
+  AttributeError: 'GoogleAccountCredentials' object has no attribute 'get_password'
+
+.. _Release 4.0.1: https://github.com/xolox/python-chat-archive/compare/4.0...4.0.1
+
 `Release 4.0`_ (2018-08-01)
 ---------------------------
 

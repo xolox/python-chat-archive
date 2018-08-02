@@ -1,7 +1,7 @@
 # Easy to use offline chat archive.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: August 1, 2018
+# Last Change: August 2, 2018
 # URL: https://github.com/xolox/python-chat-archive
 
 """Python API for the `chat-archive` program."""
@@ -29,7 +29,7 @@ DEFAULT_ACCOUNT_NAME = "default"
 """The name of the default account (a string)."""
 
 # Semi-standard package versioning.
-__version__ = "4.0"
+__version__ = "4.0.1"
 
 # Initialize a logger for this module.
 logger = VerboseLogger(__name__)

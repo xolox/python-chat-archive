@@ -1,7 +1,7 @@
 # Easy to use offline chat archive.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: July 22, 2018
+# Last Change: August 2, 2018
 # URL: https://github.com/xolox/python-chat-archive
 
 """Synchronization logic for the Google Hangouts backend of the `chat-archive` program."""
@@ -341,7 +341,7 @@ class GoogleAccountCredentials(PropertyManager):
         """Feed the configured :attr:`email_address` to :mod:`hangups`."""
         return self.email_address
 
-    def get_secret(self):
+    def get_password(self):
         """Feed the configured :attr:`password` to :mod:`hangups`."""
         return self.password
 
