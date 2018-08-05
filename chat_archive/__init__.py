@@ -23,7 +23,7 @@ from verboselogs import VerboseLogger
 from chat_archive.backends import ChatArchiveBackend
 from chat_archive.database import SchemaManager
 from chat_archive.models import Account, Base, Contact, Conversation, EmailAddress, Message
-from chat_archive.utils import get_full_name
+from chat_archive.utils import get_full_name, ensure_directory_exists
 
 DEFAULT_ACCOUNT_NAME = "default"
 """The name of the default account (a string)."""
@@ -118,9 +118,7 @@ class ChatArchive(SchemaManager):
         expanded to the profile directory of the current user).
         """
         path = parse_path(os.environ.get("CHAT_ARCHIVE_DIRECTORY", "~/.local/share/chat-archive"))
-
-        if not os.path.exists(path):
-            os.mkdir(path)
+        ensure_directory_exists(path)
 
         return path
 
