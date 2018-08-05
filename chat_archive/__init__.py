@@ -117,7 +117,12 @@ class ChatArchive(SchemaManager):
         default value ``~/.local/share/chat-archive`` is used (where ``~`` is
         expanded to the profile directory of the current user).
         """
-        return parse_path(os.environ.get("CHAT_ARCHIVE_DIRECTORY", "~/.local/share/chat-archive"))
+        path = parse_path(os.environ.get("CHAT_ARCHIVE_DIRECTORY", "~/.local/share/chat-archive"))
+
+        if not os.path.exists(path):
+            os.mkdir(path)
+
+        return path
 
     @mutable_property
     def database_file(self):
