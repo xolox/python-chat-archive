@@ -1,10 +1,13 @@
 # Easy to use offline chat archive.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: July 17, 2018
+# Last Change: December 31, 2018
 # URL: https://github.com/xolox/python-chat-archive
 
 """SQLAlchemy based database helpers."""
+
+# Standard library modules.
+import os
 
 # External dependencies.
 from alembic.command import stamp, upgrade
@@ -20,6 +23,7 @@ from verboselogs import VerboseLogger
 
 # Modules included in our package.
 from chat_archive.profiling import ProfileManager
+from chat_archive.utils import ensure_directory_exists
 
 # Initialize a logger for this module.
 logger = VerboseLogger(__name__)
@@ -28,6 +32,17 @@ logger = VerboseLogger(__name__)
 class DatabaseClient(ProfileManager):
 
     """Simple wrapper for SQLAlchemy that makes it easy to use with SQLite."""
+
+    def __init__(self, *args, **kw):
+        """
+        Initialize a :class:`DatabaseClient` object.
+
+        Please refer to the :class:`~property_manager.PropertyManager`
+        documentation for details about the handling of arguments.
+        """
+        super(DatabaseClient, self).__init__(*args, **kw)
+        if self.database_file:
+            ensure_directory_exists(os.path.dirname(self.database_file))
 
     @lazy_property
     def database_engine(self):

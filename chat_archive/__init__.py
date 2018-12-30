@@ -1,7 +1,7 @@
 # Easy to use offline chat archive.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: August 2, 2018
+# Last Change: December 31, 2018
 # URL: https://github.com/xolox/python-chat-archive
 
 """Python API for the `chat-archive` program."""
@@ -23,7 +23,7 @@ from verboselogs import VerboseLogger
 from chat_archive.backends import ChatArchiveBackend
 from chat_archive.database import SchemaManager
 from chat_archive.models import Account, Base, Contact, Conversation, EmailAddress, Message
-from chat_archive.utils import get_full_name, ensure_directory_exists
+from chat_archive.utils import get_full_name
 
 DEFAULT_ACCOUNT_NAME = "default"
 """The name of the default account (a string)."""
@@ -117,10 +117,7 @@ class ChatArchive(SchemaManager):
         default value ``~/.local/share/chat-archive`` is used (where ``~`` is
         expanded to the profile directory of the current user).
         """
-        path = parse_path(os.environ.get("CHAT_ARCHIVE_DIRECTORY", "~/.local/share/chat-archive"))
-        ensure_directory_exists(path)
-
-        return path
+        return parse_path(os.environ.get("CHAT_ARCHIVE_DIRECTORY", "~/.local/share/chat-archive"))
 
     @mutable_property
     def database_file(self):
