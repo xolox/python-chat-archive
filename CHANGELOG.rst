@@ -11,6 +11,25 @@ to `semantic versioning`_.
 .. _Keep a Changelog: http://keepachangelog.com/
 .. _semantic versioning: http://semver.org/
 
+`Release 4.0.2`_ (2018-12-31)
+-----------------------------
+
+- Merged pull request `#1`_: Automatically create archive directory when it
+  doesn't exist yet.
+
+- Bumped hangups_ from 0.4.4 to 0.4.6 to improve Google Hangouts authentication
+  compatibility.
+
+.. note:: Hangups_ release 0.4.6 (the latest available) doesn't actually work
+          for me, although I managed to get it to connect successfully after
+          hacking in captcha support, which I've since submitted as pull
+          request `#446`_ 🙂.
+
+.. _Release 4.0.2: https://github.com/xolox/python-chat-archive/compare/4.0.1...4.0.2
+.. _#1: https://github.com/xolox/python-chat-archive/pull/1
+.. _hangups: https://pypi.org/project/hangups/
+.. _#446: https://github.com/tdryer/hangups/pull/446
+
 `Release 4.0.1`_ (2018-08-02)
 -----------------------------
 

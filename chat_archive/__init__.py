@@ -29,7 +29,7 @@ DEFAULT_ACCOUNT_NAME = "default"
 """The name of the default account (a string)."""
 
 # Semi-standard package versioning.
-__version__ = "4.0.1"
+__version__ = "4.0.2"
 
 # Initialize a logger for this module.
 logger = VerboseLogger(__name__)
