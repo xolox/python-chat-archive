@@ -10,7 +10,7 @@ update-dotdee >= 5.0
 verboselogs >= 1.7
 
 # Google Hangouts backend.
-hangups >= 0.4.4
+hangups >= 0.4.6
 
 # Slack backend.
 slacker >= 0.9.65
