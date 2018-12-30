@@ -3,7 +3,7 @@
 # Easy to use offline chat archive.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: August 1, 2018
+# Last Change: December 31, 2018
 # URL: https://github.com/xolox/python-chat-archive
 
 """Setup script for the `chat-archive` package."""
@@ -61,6 +61,7 @@ setup(
     url="https://github.com/xolox/python-chat-archive",
     author="Peter Odding",
     author_email="peter@peterodding.com",
+    license="MIT",
     packages=find_packages(),
     include_package_data=True,
     entry_points={
