@@ -11,6 +11,34 @@ to `semantic versioning`_.
 .. _Keep a Changelog: http://keepachangelog.com/
 .. _semantic versioning: http://semver.org/
 
+`Release 4.0.3`_ (2020-03-27)
+-----------------------------
+
+Bug fix for the following :exc:`~exceptions.TypeError` exception raised by the Telegram backend:
+
+.. code-block:: python
+
+   Traceback (most recent call last):
+     File "../lib/python3.5/site-packages/chat_archive/cli.py", line 199, in main
+       command_fn(arguments)
+     File "../lib/python3.5/site-packages/chat_archive/cli.py", line 286, in sync_cmd
+       self.synchronize(*arguments)
+     File "../lib/python3.5/site-packages/chat_archive/__init__.py", line 335, in synchronize
+       self.initialize_backend(backend_name, account_name).synchronize()
+     File "../lib/python3.5/site-packages/chat_archive/backends/telegram.py", line 97, in synchronize
+       event_loop.run_until_complete(self.connect_then_sync())
+     File "/usr/lib/python3.5/asyncio/base_events.py", line 467, in run_until_complete
+       return future.result()
+     File "/usr/lib/python3.5/asyncio/futures.py", line 294, in result
+       raise self._exception
+     File "/usr/lib/python3.5/asyncio/tasks.py", line 240, in _step
+       result = coro.send(None)
+     File "../lib/python3.5/site-packages/chat_archive/backends/telegram.py", line 124, in connect_then_sync
+       elif dialog.date > conversation_in_db.last_modified:
+   TypeError: can't compare offset-naive and offset-aware datetimes
+
+.. _Release 4.0.3: https://github.com/xolox/python-chat-archive/compare/4.0.2...4.0.3
+
 `Release 4.0.2`_ (2018-12-31)
 -----------------------------
 

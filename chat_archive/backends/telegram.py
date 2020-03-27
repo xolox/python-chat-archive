@@ -1,7 +1,7 @@
 # Easy to use offline chat archive.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: August 1, 2018
+# Last Change: March 27, 2020
 # URL: https://github.com/xolox/python-chat-archive
 
 """
@@ -25,7 +25,7 @@ from verboselogs import VerboseLogger
 # Modules included in our package.
 from chat_archive.backends import ChatArchiveBackend
 from chat_archive.models import Account, Conversation
-from chat_archive.utils import ensure_directory_exists, get_secret
+from chat_archive.utils import ensure_directory_exists, get_secret, strip_tzinfo
 
 FRIENDLY_NAME = "Telegram"
 """A user friendly name for the chat service supported by this backend (a string)."""
@@ -121,7 +121,7 @@ class TelegramBackend(ChatArchiveBackend):
                 )
                 if not conversation_in_db.import_complete:
                     await self.perform_initial_sync(dialog, conversation_in_db)
-                elif dialog.date > conversation_in_db.last_modified:
+                elif strip_tzinfo(dialog.date) > strip_tzinfo(conversation_in_db.last_modified):
                     logger.info("Conversation was updated (%s) ..", dialog.id)
                     await self.update_conversation(dialog, conversation_in_db)
                     conversation_in_db.last_modified = dialog.date

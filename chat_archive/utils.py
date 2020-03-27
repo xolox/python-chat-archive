@@ -1,7 +1,7 @@
 # Easy to use offline chat archive.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: August 1, 2018
+# Last Change: March 27, 2020
 # URL: https://github.com/xolox/python-chat-archive
 
 """Utility functions for the `chat-archive` program."""
@@ -96,6 +96,11 @@ def get_secret_from_store(name, directory=None):
 def prompt_for_password(prompt_text):
     """Interactively prompt the operator for a password."""
     return getpass.getpass(prompt_text)
+
+
+def strip_tzinfo(value):
+    """Strip timezone information from :class:`datetime.datetime` objects to enable comparison."""
+    return value if value.tzinfo is None else value.replace(tzinfo=None)
 
 
 def utc_to_local(utc_value):
