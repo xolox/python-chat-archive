@@ -1,7 +1,7 @@
 # Easy to use offline chat archive.
 #
 # Author: Peter Odding <peter@peterodding.com>
-# Last Change: August 1, 2018
+# Last Change: March 27, 2020
 # URL: https://github.com/xolox/python-chat-archive
 
 """Sphinx documentation configuration for the `chat-archive` project."""
@@ -28,7 +28,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'chat-archive'
-copyright = '2018, Peter Odding'
+copyright = '2020, Peter Odding'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

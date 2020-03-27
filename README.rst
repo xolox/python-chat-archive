@@ -439,7 +439,7 @@ License
 
 This software is licensed under the `MIT license`_.
 
-© 2018 Peter Odding.
+© 2020 Peter Odding.
 
 Here's a quick overview of the licenses of the dependencies:
 
